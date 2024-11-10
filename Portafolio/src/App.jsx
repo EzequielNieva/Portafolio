@@ -3,6 +3,7 @@ import salud from './assets/salud.png';
 import gym from './assets/gym.png'
 import ecommerce from './assets/ecommerce.png'
 import cineFamily from './assets/cineFamily.png'
+import cv from './assets/CV-Ezequiel-Nieva.pdf'
 import './App.css';
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
                 <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://github.com/EzequielNieva" target="_blank" role="button">GitHub</a>
                 <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://www.linkedin.com/in/ezequielnieva/" target="_blank" role="button">LinkedIn</a>
                 <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://mail.google.com/mail/?view=cm&to=nievaezequiel3@gmail.com" target="_blank" role="button">Contactáme</a>
-                <a className="btn btn-warning mb-2 me-2 me-sm-3" href="/docs/5.3/components/navbar/#offcanvas" role="button">Descargar CV</a>
+                <a className="btn btn-warning mb-2 me-2 me-sm-3" href={cv} role="button" download>Descargar CV</a>
               </p>
             </div><hr />
 
