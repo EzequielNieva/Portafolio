@@ -1,0 +1,7 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+body{
+    background-color:#1a1a1a;
+    color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+}
