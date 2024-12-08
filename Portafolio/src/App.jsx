@@ -67,22 +67,6 @@ function App() {
 
                 <div className="col">
                   <div className="card bg-secondary text-light h-100 d-flex flex-column">
-                    <img src={salud} className="card-img-top" alt="..." />
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title">Servicio Salud</h5>
-                      <p className="card-text">Trabajo Grupal</p>
-                      <p className="card-text">
-                        Tecnologias: Java, Html, Css, JavaScript , Spring Boot, Spring Security, Spring Data JPA, Thymeleaf, Lombok, MySQL, Bcrypt.
-                      </p>
-                      <div className="mt-auto">
-                        <a href="https://github.com/EzequielNieva/ServicioSalud" className="btn btn-warning" target="_blank">Codigo</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col">
-                  <div className="card bg-secondary text-light h-100 d-flex flex-column">
                     <img src={ecommerce} className="card-img-top" alt="..." />
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">Ecommer</h5>
@@ -141,9 +125,6 @@ function App() {
                 <span className="badge bg-secondary me-1">Express</span>
                 <span className="badge bg-secondary me-1">Nest.js</span>
                 <span className="badge bg-secondary me-1">TypeScript</span>
-                <span className="badge bg-secondary me-1">Java</span>
-                <span className="badge bg-secondary me-1">Spring Boot</span>
-                <span className="badge bg-secondary me-1">Spring Security</span>
                 <span className="badge bg-secondary me-1">Swagger</span>
                 <span className="badge bg-secondary me-1">PostgreSQL</span>
                 <span className="badge bg-secondary me-1">MySQL</span>
@@ -151,7 +132,6 @@ function App() {
                 <span className="badge bg-secondary me-1">HTML</span>
                 <span className="badge bg-secondary me-1">CSS</span>
                 <span className="badge bg-secondary me-1">React</span>
-                <span className="badge bg-secondary me-1">Thymeleaf</span>
                 <span className="badge bg-secondary me-1">Axios</span>
                 <span className="badge bg-secondary me-1">Bootstrap</span>
                 <span className="badge bg-secondary me-1">GitHub</span>
