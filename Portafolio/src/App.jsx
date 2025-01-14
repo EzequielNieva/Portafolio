@@ -33,7 +33,7 @@ function App() {
             <div className="center-image col-sm-8 py-5 mx-auto">
               <img src={foto} alt="Descripción de la imagen" className="bd-placeholder-img rounded-circle" width="160" height="160" />
               <h1 className="display-5 fw-normal">Ezequiel Nieva</h1>
-              <p className="fs-4">Desarrollador web FullStack "Backend"</p>
+              <p className="fs-4">Desarrollador web FullStack</p>
               <p className="fs-5">Bienvenido a mi espacio creativo, dedicado a construir soluciones efectivas. Navega por mi portfolio para conocer más sobre mis proyectos y habilidades. ¡Espero que disfrutes la visita!</p>
               <p>
                 <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://github.com/EzequielNieva" target="_blank" role="button">GitHub</a>
@@ -124,6 +124,7 @@ function App() {
                 <span className="badge bg-secondary me-1">Node.js</span>
                 <span className="badge bg-secondary me-1">Express</span>
                 <span className="badge bg-secondary me-1">Nest.js</span>
+                <span className="badge bg-secondary me-1">Next.js</span>
                 <span className="badge bg-secondary me-1">TypeScript</span>
                 <span className="badge bg-secondary me-1">Swagger</span>
                 <span className="badge bg-secondary me-1">PostgreSQL</span>
