@@ -1,7 +1,8 @@
 @import "bootstrap/scss/bootstrap.scss";
 
-body{
-    background-color:#1a1a1a;
-    color: #f8f9fa;
-    font-family: 'Roboto', sans-serif;
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* fondo uniforme */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

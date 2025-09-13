@@ -1,159 +1,205 @@
+import { useState } from "react";
 import foto from './assets/foto.jpeg';
 import salud from './assets/salud.png';
-import gym from './assets/gym.png'
-import ecommerce from './assets/ecommerce.png'
-import cineFamily from './assets/cineFamily.png'
-import cv from './assets/CV-Ezequiel-Nieva.pdf'
+import gym from './assets/gym.png';
+import ecommerce from './assets/ecommerce.png';
+import cineFamily from './assets/cineFamily.png';
+import cv from './assets/Ezequiel-Nieva-CV.pdf';
 import './App.css';
 
 function App() {
+  const [activeTab, setActiveTab] = useState("experiencia");
+
+  const proyectos = [
+    { title: "Gym FitZone", desc: "Trabajo Grupal", tech: "Nest.js, Next.js, PostgreSQL...", img: gym, code: "https://github.com/EzequielNieva/GymFitZone", demo: "https://fitzzone.vercel.app" },
+    { title: "Ecommer", desc: "Trabajo Individual", tech: "Nest.js, Swagger, PostgreSQL...", img: ecommerce, code: "https://github.com/EzequielNieva/Ecommer" },
+    { title: "CineFamily", desc: "Trabajo Individual", tech: "JS, Express, MongoDB...", img: cineFamily, code: "https://github.com/EzequielNieva/CineFamily" },
+    { title: "Proyecto Salud", desc: "Trabajo Grupal", tech: "Java, Spring Boot, MySQL...", img: salud, code: "https://github.com/EzequielNieva/ServicioSalud" }
+  ];
 
   return (
-    <>
-      <header>
-        <nav className="navbar navbar-expand-lg bg-dark border-body" data-bs-theme="dark">
-          <div className="container-fluid">
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-              <div className="navbar-nav">
-                <a className="nav-link active" id='inicio' aria-current="page" href="#incio">Inicio</a>
-                <a className="nav-link" href="#proyectos">Mis Proyectos</a>
-                <a className="nav-link" href="#MiCamino">Mi Camino</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main>
-        <div className="container my-5">
-          <div className="bg-dark text-light p-5 rounded">
-
-            <div className="center-image col-sm-8 py-5 mx-auto">
-              <img src={foto} alt="Descripción de la imagen" className="bd-placeholder-img rounded-circle" width="160" height="160" />
-              <h1 className="display-5 fw-normal">Ezequiel Nieva</h1>
-              <p className="fs-4">Desarrollador web FullStack</p>
-              <p className="fs-5">Bienvenido a mi espacio creativo, dedicado a construir soluciones efectivas. Navega por mi portfolio para conocer más sobre mis proyectos y habilidades. ¡Espero que disfrutes la visita!</p>
-              <p>
-                <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://github.com/EzequielNieva" target="_blank" role="button">GitHub</a>
-                <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://www.linkedin.com/in/ezequielnieva/" target="_blank" role="button">LinkedIn</a>
-                <a className="btn btn-warning mb-2 me-2 me-sm-3" href="https://mail.google.com/mail/?view=cm&to=nievaezequiel3@gmail.com" target="_blank" role="button">Contactáme</a>
-                <a className="btn btn-warning mb-2 me-2 me-sm-3" href={cv} role="button" download>Descargar CV</a>
-              </p>
-            </div><hr />
-
-            <div id="proyectos" className="col-sm-8 py-5 mx-auto">
-              <h1 className="display-6 fw-normal text-center">Mis Proyectos Destacados</h1>
-
-              <div className="row row-cols-1 py-3 row-cols-md-2 g-4">
-
-                <div className="col">
-                  <div className="card bg-secondary text-light h-100 d-flex flex-column">
-                    <img src={gym} className="card-img-top" alt="..." />
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title">Gym FitZone</h5>
-                      <p className="card-text">Trabajo Grupal</p>
-                      <p className="card-text">
-                        Tecnologias: Nest.js, Next.js, Bcrypt, Cloudinary, Mercadopago, Nodemailer, TypeORM, PostgreSQL, Passport-google-oauth20, Formik, Tailwind CSS, Render y Vercel.
-                      </p>
-                      <div className="mt-auto">
-                        <a href="https://github.com/EzequielNieva/GymFitZone" className="btn btn-warning me-1" target="_blank">Codigo</a>
-                        <a href="https://fitzzone.vercel.app" className="btn btn-warning" target="_blank">Enlance</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col">
-                  <div className="card bg-secondary text-light h-100 d-flex flex-column">
-                    <img src={ecommerce} className="card-img-top" alt="..." />
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title">Ecommer</h5>
-                      <p className="card-text">Trabajo Individual</p>
-                      <p className="card-text">
-                        Tecnologias: Nest.js, Swagger, JWT, Bcrypt, PostgreSQL, TypeORM y Cloudinary.
-                      </p>
-                      <div className="mt-auto">
-                        <a href="https://github.com/EzequielNieva/Ecommer" className="btn btn-warning" target="_blank">Codigo</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col">
-                  <div className="card bg-secondary text-light h-100 d-flex flex-column">
-                    <img src={cineFamily} className="card-img-top" alt="..." />
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title">CineFamily</h5>
-                      <p className="card-text">Trabajo Individual</p>
-                      <p className="card-text">
-                        Tecnologias: JavaScript, Express, Axios, Mongoose, MongoDB y Bootstrap.
-                      </p>
-                      <div className="mt-auto">
-                        <a href="https://github.com/EzequielNieva/CineFamily" className="btn btn-warning" target="_blank">Codigo</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <hr />
-
-            <div id="MiCamino" className="col-sm-8 py-5 mx-auto">
-              <h1 className="display-6 fw-normal text-center">Desafíos Superados y Habilidades Adquiridas</h1>
-
-              <div className="row mt-4 align-items-center">
-                <div className="col-md-4 mb-4 mb-md-0">
-                  <img src={foto} alt="Ezequiel Nieva - Desarrollador Web" className="bd-placeholder-img rounded-circle img-fluid" width="180" height="180" />
-                </div>
-                <div className="col-md-8">
-                  <p className="fs-5">
-                    Desde mis primeros pasos en la programación, he enfrentado desafíos que han moldeado mis habilidades y enfoque profesional. Mi viaje comenzó con la curiosidad por entender las aplicaciones web, y con el tiempo he adquirido competencias en diversas áreas de desarrollo.
-                  </p>
-                  <p className="fs-5">
-                    He trabajado en proyectos tanto individuales como grupales, lo que me ha permitido aprender a colaborar y enfrentar problemas complejos. Cada desafío ha sido una oportunidad para crecer y mejorar mis habilidades técnicas y blandas.
-                  </p>
-                </div>
-              </div>
-
-              <h2 className="mt-4">Tecnologías que Manejo</h2>
-              <p className="mt-3 fs-5">
-                <span className="badge bg-secondary me-1">JavaScript</span>
-                <span className="badge bg-secondary me-1">Node.js</span>
-                <span className="badge bg-secondary me-1">Express</span>
-                <span className="badge bg-secondary me-1">Nest.js</span>
-                <span className="badge bg-secondary me-1">Next.js</span>
-                <span className="badge bg-secondary me-1">TypeScript</span>
-                <span className="badge bg-secondary me-1">Swagger</span>
-                <span className="badge bg-secondary me-1">PostgreSQL</span>
-                <span className="badge bg-secondary me-1">MySQL</span>
-                <span className="badge bg-secondary me-1">MongoDB</span>
-                <span className="badge bg-secondary me-1">HTML</span>
-                <span className="badge bg-secondary me-1">CSS</span>
-                <span className="badge bg-secondary me-1">React</span>
-                <span className="badge bg-secondary me-1">Axios</span>
-                <span className="badge bg-secondary me-1">Bootstrap</span>
-                <span className="badge bg-secondary me-1">GitHub</span>
-              </p>
-            </div>
+    <div className="profile-wrapper">
+      <div className="profile-container">
+        <div className="profile-left">
+          <img src={foto} alt="Ezequiel Nieva" className="profile-photo mb-3" />
+          <h2 className="mb-1">Ezequiel Nieva</h2>
+          <h5 className="text-white mb-3">Full Stack Developer</h5>
+          <div className="d-flex flex-column gap-2">
+            <a href={cv} className="btn btn-warning btn-sm">Descargar CV</a>
+            <a href="https://github.com/EzequielNieva" target="_blank" rel="noopener noreferrer" className="btn btn-dark btn-sm">GitHub</a>
+            <a href="https://www.linkedin.com/in/ezequielnieva/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">LinkedIn</a>
+            <a href="mailto:nievaezequiel3@gmail.com" className="btn btn-success btn-sm">Contactame</a>
           </div>
         </div>
-      </main>
+        <div className="profile-right">
+          <ul className="nav nav-tabs mb-3">
+            <li className="nav-item">
+              <button className={`nav-link ${activeTab === "experiencia" ? "active" : ""}`} onClick={() => setActiveTab("experiencia")}>
+                Experiencia
+              </button>
+            </li>
+            <li className="nav-item">
+              <button className={`nav-link ${activeTab === "proyectos" ? "active" : ""}`} onClick={() => setActiveTab("proyectos")}>
+                Proyectos
+              </button>
+            </li>
+            <li className="nav-item">
+              <button className={`nav-link ${activeTab === "educacion" ? "active" : ""}`} onClick={() => setActiveTab("educacion")}>
+                Educación
+              </button>
+            </li>
+            <li className="nav-item">
+              <button className={`nav-link ${activeTab === "sobreMi" ? "active" : ""}`} onClick={() => setActiveTab("sobreMi")}>
+                Sobre Mi
+              </button>
+            </li>
+          </ul>
 
-      <footer className="bg-dark text-light text-center py-3 mt-5">
-        <div className="container">
-          <p className="mb-0">
-            © 2024 Ezequiel Nieva. Todos los derechos reservados.
-            <a id='inicio' className="text-warning me-2 ms-4" href="#inicio">Inicio</a>
-            <a href="https://mail.google.com/mail/?view=cm&to=nievaezequiel3@gmail.com" className="text-warning ms-2" target="_blank" rel="noopener noreferrer">Contactame</a>
-          </p>
+          <div className="tab-content">
+            {activeTab === "experiencia" && (
+              <div>
+                <h4>Experiencia Profesional</h4>
+
+                <div className="mb-3">
+                  <h5>Thaskify – Full Stack Web Developer</h5>
+                  <p className="text-muted">Jun 2025 – Actualidad</p>
+                  <ul>
+                    <li>Desarrollo de funcionalidades críticas en el sistema de gestión de proyectos, incrementando la eficiencia de los usuarios y la escalabilidad de la plataforma.</li>
+                    <li>Rediseño de componentes UI/UX que mejoran la navegación y reducen errores de usuario.</li>
+                    <li>Refactorización de la lógica de recompensas y relaciones de base de datos, optimizando integridad y tiempos de respuesta.</li>
+                    <li>Participación en revisiones de código, planificación de sprints y control de versiones con GitHub.</li>
+                  </ul>
+                </div>
+
+                <div className="mb-3">
+                  <h5>Proyectos Destacados</h5>
+                  <ul>
+                    <li>
+                      <strong>Gym FitZone (2024) – Proyecto grupal:</strong> Desarrollo de plataforma integral para gimnasios, incluyendo membresías, reservas, pagos y rutinas. Integración de Mercado Pago y diseño de base de datos relacional escalable. Tecnologías: Nest.js, Next.js, PostgreSQL.
+                    </li>
+                    <li>
+                      <strong>E-commerce Backend (2024) – Proyecto individual:</strong> API RESTful escalable para gestión de productos, carrito y órdenes, documentada con Swagger. Tecnologías: Node.js, Nest.js, PostgreSQL.
+                    </li>
+                    <li>
+                      <strong>Gestor de Turnos (2024) – Proyecto individual:</strong> Sistema de registro/login con notificaciones por email y módulo de reservas dinámicas. Tecnologías: React.js, Node.js, PostgreSQL, Nodemailer.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "proyectos" && (
+              <div>
+                <h4>Proyectos</h4>
+                <div className="proyectos-carrusel">
+                  {proyectos.map((p, i) => (
+                    <div key={i} className="card proyecto-card">
+                      <img src={p.img} className="card-img-top" alt={p.title} />
+                      <div className="card-body d-flex flex-column">
+                        <h5 className="card-title">{p.title}</h5>
+                        <p className="card-text">{p.desc}</p>
+                        <p className="card-text text-muted">{p.tech}</p>
+                        <div className="mt-auto">
+                          {p.code && <a href={p.code} className="btn btn-warning me-2 mb-2 btn-sm" target="_blank" rel="noopener noreferrer">Código</a>}
+                          {p.demo && <a href={p.demo} className="btn btn-warning mb-2 btn-sm" target="_blank" rel="noopener noreferrer">Demo</a>}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "educacion" && (
+              <div>
+                <h5>Educación Profesional</h5>
+                <ul>
+                  <li>
+                    <strong>Tecnicatura Universitaria en Programación – UPATecO</strong> (En curso)<br />
+                    Formación en Frontend, Backend, bases de datos y desarrollo de apps móviles.
+                    <br />Tecnologías aprendidas: Java, JavaScript, Python, C#, SQL.
+                    <br />Metodologías: Agile, Scrum.
+                    <br />Proyectos prácticos: diseño UI/UX, desarrollo full stack, integración de bases de datos y apps móviles.
+                  </li>
+                  <li>
+                    <strong>Full Stack Web Developer – Henry Bootcamp</strong> (2024)<br />
+                    800 horas de formación práctica en desarrollo web.
+                    <br />Tecnologías: React.js, Node.js, PostgreSQL, MongoDB.
+                    <br />Metodologías: Scrum y trabajo colaborativo.
+                    <br />Proyectos prácticos: aplicaciones web completas con backend y frontend, control de versiones con GitHub.
+                  </li>
+                  <li>
+                    <strong>Programador Full Stack – Argentina Programa 4.0</strong> (2023–2024)<br />
+                    Formación en desarrollo web integral.
+                    <br />Tecnologías: Java, Spring Boot, Spring Security, Spring Data, HTML, CSS, JavaScript, MySQL.
+                    <br />Metodologías: Agile, Scrum.
+                    <br />Proyectos prácticos: desarrollo de proyectos integradores frontend y backend con buenas prácticas.
+                  </li>
+                </ul>
+                <h5>Educación Complementaria</h5>
+                <ul>
+                  <li>
+                    <strong>Curso de Java – UTN Mendoza</strong> (2024, 70 h)<br />
+                    Aprendizaje de fundamentos de Java y POO, desarrollo de aplicaciones de consola y manejo de estructuras de datos.
+                  </li>
+                  <li>
+                    <strong>Java: De Cero a Experto – Udemy / Global Mentoring</strong> (2024, 106 h)<br />
+                    Desarrollo de aplicaciones prácticas, introducción a frameworks, buenas prácticas de programación y testing.
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {activeTab === "sobreMi" && (
+              <div>
+                <p>
+                  Me llamo Ezequiel Nieva, soy de Salta, Argentina, y soy Desarrollador Full Stack con experiencia en desarrollo y programación de aplicaciones web y móviles escalables.
+                </p>
+                <p>
+                  Actualmente estudio la Tecnicatura Universitaria en Programación en la Universidad Provincial UPATECO de Salta, buscando expandir mis conocimientos y entender a fondo el funcionamiento del software.
+                </p>
+                <p>
+                  Desde mis primeros pasos en la programación, he enfrentado desafíos que han moldeado mis habilidades y enfoque profesional. Mi curiosidad por entender las aplicaciones web me llevó a adquirir competencias en diversas áreas de desarrollo.
+                </p>
+                <p>
+                  He trabajado en proyectos individuales y grupales, lo que me ha permitido aprender a colaborar, enfrentar problemas complejos y mejorar mis habilidades técnicas y blandas. Me considero proactivo, adaptable y enfocado en los objetivos, con capacidad de liderazgo cuando se requiere y siempre abierto a nuevas ideas y aprendizajes.
+                </p>
+
+                <h5>Tecnologías y Frameworks</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {["JavaScript", "TypeScript", "React.js", "Next.js", "Redux", "Node.js", "Express.js", "Nest.js", "Java", "Spring Boot"].map((s, i) => (
+                    <span key={i} className="badge bg-secondary">{s}</span>
+                  ))}
+                </div>
+
+                <h5>Bases de Datos</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {["MongoDB", "PostgreSQL", "MySQL"].map((s, i) => (
+                    <span key={i} className="badge bg-secondary">{s}</span>
+                  ))}
+                </div>
+
+                <h5>Herramientas y DevOps</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {["GitHub", "Docker", "Swagger", "Postman", "VS Code", "Slack"].map((s, i) => (
+                    <span key={i} className="badge bg-secondary">{s}</span>
+                  ))}
+                </div>
+
+                <h5>Metodologías de Trabajo</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {["Agile", "Scrum", "Trabajo Colaborativo", "Control de Versiones"].map((s, i) => (
+                    <span key={i} className="badge bg-secondary">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+          </div>
         </div>
-      </footer>
 
-
-    </>
+      </div>
+    </div>
   );
 }
 
